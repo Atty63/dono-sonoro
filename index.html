@@ -11,11 +11,12 @@ html,body{background:var(--bg);font-family:'Jost',sans-serif;font-weight:300;col
 .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:6rem 2rem 4rem;text-align:center;position:relative}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(184,145,90,.06) 0%,transparent 70%);pointer-events:none}
 .hero-inner{max-width:720px;margin:0 auto}
-.hero-tag{font-size:.85rem;letter-spacing:.4em;text-transform:uppercase;color:var(--oro);display:block;margin-bottom:2rem}
+.hero-tag{font-size:1rem;letter-spacing:.3em;text-transform:uppercase;color:var(--oro-c);display:block;margin-bottom:2rem;font-weight:500}
 .hero-titolo{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,9vw,6rem);font-weight:300;line-height:1.05;margin-bottom:1.5rem;color:#f0e8d8}
 .hero-titolo em{font-style:italic;color:var(--oro)}
 .hero-sub{font-size:clamp(1.1rem,2.5vw,1.25rem);line-height:1.9;color:rgba(240,232,216,.85);max-width:500px;margin:0 auto 3rem}
 .linea-oro{width:60px;height:1px;background:linear-gradient(to right,transparent,var(--oro-c),transparent);margin:0 auto 3rem}
+.io-lo-faccio{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-style:italic;font-weight:600;color:var(--oro-c)}
 .intro{padding:5rem 2rem;text-align:center;border-top:1px solid rgba(184,145,90,.1)}
 .intro-inner{max-width:640px;margin:0 auto}
 .intro p{font-family:'Cormorant Garamond',serif;font-size:clamp(1.4rem,3.5vw,1.8rem);font-style:italic;font-weight:300;line-height:1.8;color:rgba(240,232,216,.9);margin-bottom:1.5rem}
@@ -46,7 +47,7 @@ html,body{background:var(--bg);font-family:'Jost',sans-serif;font-weight:300;col
 .nota{font-size:1rem;color:var(--oro-c);margin-top:1.5rem;letter-spacing:.05em;font-weight:400}
 .sep{width:1px;height:60px;background:linear-gradient(to bottom,transparent,rgba(184,145,90,.5),transparent);margin:0 auto}
 .footer{padding:3rem 2rem;text-align:center;border-top:1px solid rgba(184,145,90,.2)}
-.footer a{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--oro-c);letter-spacing:.4em;text-transform:uppercase;text-decoration:none;font-weight:400}
+.footer a{font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:var(--oro-c);letter-spacing:.4em;text-transform:uppercase;text-decoration:none;font-weight:600}
 @media(max-width:600px){
 .hero{padding:5rem 1.5rem 3rem}
 .eventi{padding:3rem 1.2rem}
@@ -66,7 +67,7 @@ html,body{background:var(--bg);font-family:'Jost',sans-serif;font-weight:300;col
     <h1 class="hero-titolo">Una voce.<br>La vostra storia.<br><em>Per sempre.</em></h1>
     <p class="hero-sub">C'è un momento in ogni evento importante in cui le parole non bastano. Le foto catturano il volto. Il video cattura il movimento. Ma nessuno cattura quello che si sente dentro.</p>
     <div class="linea-oro"></div>
-    <p style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-style:italic;color:rgba(184,145,90,.9)">Io lo faccio.</p>
+    <p class="io-lo-faccio">Io lo faccio.</p>
   </div>
 </section>
 <div class="sep"></div>
@@ -83,7 +84,7 @@ html,body{background:var(--bg);font-family:'Jost',sans-serif;font-weight:300;col
   <div class="eventi-grid">
     <div class="evento-card"><span class="evento-emoji">💍</span><div class="evento-nome">Matrimoni</div><p class="evento-desc">La vostra storia raccontata agli ospiti. Ogni invitato porta a casa un pezzo di quel giorno. Per 50, 100, 300 persone.</p></div>
     <div class="evento-card"><span class="evento-emoji">🕯️</span><div class="evento-nome">Funerali e commemorazioni</div><p class="evento-desc">La vita di chi non c'è più, raccontata con dignità e verità. Il regalo più prezioso che una famiglia possa fare.</p></div>
-    <div class="evento-card"><span class="evento-emoji">✝️</span><div class="evento-nome">Comunioni e cresime</div><p class="evento-desc">Il bambino come protagonista. I genitori in lacrime. Gli ospiti in silenzio. Un momento irripetibile reso eterno.</p></div>
+    <div class="evento-card"><span class="evento-emoji">✝</span><div class="evento-nome">Comunioni e cresime</div><p class="evento-desc">Il bambino come protagonista. I genitori in lacrime. Gli ospiti in silenzio. Un momento irripetibile reso eterno.</p></div>
     <div class="evento-card"><span class="evento-emoji">🥂</span><div class="evento-nome">Anniversari</div><p class="evento-desc">25, 40, 50 anni insieme. Una storia che merita di essere detta ad alta voce davanti a chi avete amato.</p></div>
     <div class="evento-card"><span class="evento-emoji">🎓</span><div class="evento-nome">Lauree</div><p class="evento-desc">Anni di fatica, sacrificio, crescita. Raccontati in tre minuti che valgono tutto. Un regalo che resta.</p></div>
     <div class="evento-card"><span class="evento-emoji">🏢</span><div class="evento-nome">Eventi aziendali</div><p class="evento-desc">Convention, pensionamenti, inaugurazioni. Un momento emotivo che unisce le persone davvero.</p></div>
