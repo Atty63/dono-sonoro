@@ -6,50 +6,57 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--oro:#b8915a;--oro-c:#d4ac78;--oro-s:#8a6a3a;--oro-p:#e8d5b0;--bianco:#fdfaf6;--testo:#2e2a26;--testo-m:#5a5550;--linea:rgba(184,145,90,.2);--linea-f:rgba(184,145,90,.4);--bg:#0d0b08}
+:root{--oro:#b8915a;--oro-c:#d4ac78;--oro-s:#8a6a3a;--bg:#0d0b08;--bianco:#fdfaf6}
 html,body{background:var(--bg);font-family:'Jost',sans-serif;font-weight:300;color:var(--bianco);overflow-x:hidden}
 .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:6rem 2rem 4rem;text-align:center;position:relative}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(184,145,90,.06) 0%,transparent 70%);pointer-events:none}
 .hero-inner{max-width:720px;margin:0 auto}
-.hero-tag{font-size:.6rem;letter-spacing:.5em;text-transform:uppercase;color:var(--oro);display:block;margin-bottom:2rem;opacity:.8}
-.hero-titolo{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,8vw,6rem);font-weight:300;line-height:1.05;margin-bottom:1.5rem;color:#f0e8d8}
+.hero-tag{font-size:.75rem;letter-spacing:.4em;text-transform:uppercase;color:var(--oro);display:block;margin-bottom:2rem;opacity:.8}
+.hero-titolo{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,9vw,6rem);font-weight:300;line-height:1.05;margin-bottom:1.5rem;color:#f0e8d8}
 .hero-titolo em{font-style:italic;color:var(--oro)}
-.hero-sub{font-size:clamp(.9rem,2vw,1.1rem);line-height:1.9;color:rgba(240,232,216,.55);max-width:500px;margin:0 auto 3rem}
+.hero-sub{font-size:clamp(1.05rem,2.5vw,1.2rem);line-height:1.9;color:rgba(240,232,216,.7);max-width:500px;margin:0 auto 3rem}
 .linea-oro{width:60px;height:1px;background:linear-gradient(to right,transparent,var(--oro-c),transparent);margin:0 auto 3rem}
 .intro{padding:5rem 2rem;text-align:center;border-top:1px solid rgba(184,145,90,.1)}
 .intro-inner{max-width:640px;margin:0 auto}
-.intro p{font-family:'Cormorant Garamond',serif;font-size:clamp(1.2rem,3vw,1.6rem);font-style:italic;font-weight:300;line-height:1.8;color:rgba(240,232,216,.8);margin-bottom:1.5rem}
+.intro p{font-family:'Cormorant Garamond',serif;font-size:clamp(1.3rem,3.5vw,1.7rem);font-style:italic;font-weight:300;line-height:1.8;color:rgba(240,232,216,.9);margin-bottom:1.5rem}
 .intro p strong{color:var(--oro-c);font-style:normal;font-weight:400}
 .eventi{padding:5rem 2rem;max-width:900px;margin:0 auto}
-.eventi-titolo{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:300;text-align:center;color:#f0e8d8;margin-bottom:.5rem}
-.eventi-sub{text-align:center;font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;color:var(--oro);margin-bottom:3.5rem;opacity:.7}
+.eventi-titolo{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5vw,3rem);font-weight:300;text-align:center;color:#f0e8d8;margin-bottom:.5rem}
+.eventi-sub{text-align:center;font-size:.95rem;letter-spacing:.2em;text-transform:uppercase;color:var(--oro);margin-bottom:3.5rem;opacity:.9}
 .eventi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem}
-.evento-card{background:rgba(255,255,255,.03);border:1px solid rgba(184,145,90,.15);padding:2rem 1.8rem;border-radius:4px;transition:border-color .35s,background .35s}
-.evento-card:hover{border-color:rgba(184,145,90,.4);background:rgba(184,145,90,.04)}
-.evento-emoji{font-size:1.6rem;display:block;margin-bottom:1rem}
-.evento-nome{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:400;color:#f0e8d8;margin-bottom:.5rem}
-.evento-desc{font-size:.82rem;line-height:1.75;color:rgba(240,232,216,.5)}
+.evento-card{background:rgba(255,255,255,.04);border:1px solid rgba(184,145,90,.2);padding:2rem 1.8rem;border-radius:4px}
+.evento-emoji{font-size:1.8rem;display:block;margin-bottom:1rem}
+.evento-nome{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:400;color:#f0e8d8;margin-bottom:.8rem}
+.evento-desc{font-size:.95rem;line-height:1.8;color:rgba(240,232,216,.75)}
 .come{padding:5rem 2rem;text-align:center;border-top:1px solid rgba(184,145,90,.1)}
 .come-inner{max-width:720px;margin:0 auto}
-.come h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:300;color:#f0e8d8;margin-bottom:.5rem}
-.come-sub{font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;color:var(--oro);margin-bottom:3.5rem;opacity:.7}
+.come h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5vw,3rem);font-weight:300;color:#f0e8d8;margin-bottom:.5rem}
+.come-sub{font-size:.95rem;letter-spacing:.2em;text-transform:uppercase;color:var(--oro);margin-bottom:3.5rem;opacity:.9}
 .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;margin-bottom:3.5rem}
 .step{text-align:center}
 .step-n{font-family:'Cormorant Garamond',serif;font-size:4rem;font-weight:300;color:rgba(184,145,90,.2);line-height:1;display:block;margin-bottom:.5rem}
-.step-t{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:#f0e8d8;margin-bottom:.4rem}
-.step-d{font-size:.8rem;line-height:1.75;color:rgba(240,232,216,.45)}
+.step-t{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:#f0e8d8;margin-bottom:.6rem}
+.step-d{font-size:.95rem;line-height:1.8;color:rgba(240,232,216,.65)}
 .cta-section{padding:5rem 2rem;text-align:center;border-top:1px solid rgba(184,145,90,.1)}
 .cta-inner{max-width:560px;margin:0 auto}
-.cta-t{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:300;font-style:italic;color:#f0e8d8;line-height:1.2;margin-bottom:1rem}
-.cta-s{font-size:.9rem;line-height:1.85;color:rgba(240,232,216,.45);margin-bottom:2.5rem}
-.btn-wa{display:inline-flex;align-items:center;gap:.8rem;background:#25D366;color:#fff;padding:1.1rem 2.8rem;font-family:'Jost',sans-serif;font-size:.7rem;font-weight:400;letter-spacing:.25em;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:all .3s}
-.btn-wa:hover{background:#1ebe5a;transform:translateY(-2px)}
-.btn-wa svg{width:17px;height:17px;fill:#fff;flex-shrink:0}
-.nota{font-size:.7rem;color:rgba(184,145,90,.4);margin-top:1.5rem;letter-spacing:.1em}
+.cta-t{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:300;font-style:italic;color:#f0e8d8;line-height:1.2;margin-bottom:1rem}
+.cta-s{font-size:1rem;line-height:1.85;color:rgba(240,232,216,.65);margin-bottom:2.5rem}
+.btn-wa{display:inline-flex;align-items:center;gap:.8rem;background:#25D366;color:#fff;padding:1.2rem 3rem;font-family:'Jost',sans-serif;font-size:.95rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;text-decoration:none;border-radius:4px}
+.btn-wa svg{width:22px;height:22px;fill:#fff;flex-shrink:0}
+.nota{font-size:.85rem;color:rgba(184,145,90,.6);margin-top:1.5rem;letter-spacing:.1em}
 .sep{width:1px;height:60px;background:linear-gradient(to bottom,transparent,rgba(184,145,90,.5),transparent);margin:0 auto}
 .footer{padding:2rem;text-align:center;border-top:1px solid rgba(184,145,90,.1)}
 .footer a{font-family:'Cormorant Garamond',serif;font-size:.95rem;color:var(--oro-c);letter-spacing:.35em;text-transform:uppercase;text-decoration:none;opacity:.6}
-@media(max-width:600px){.hero{padding:5rem 1.5rem 3rem}.eventi{padding:3rem 1.5rem}.come{padding:3rem 1.5rem}.cta-section{padding:3rem 1.5rem}.evento-card{padding:1.5rem}}
+@media(max-width:600px){
+.hero{padding:5rem 1.5rem 3rem}
+.eventi{padding:3rem 1.2rem}
+.eventi-grid{grid-template-columns:1fr}
+.come{padding:3rem 1.2rem}
+.steps{grid-template-columns:1fr}
+.cta-section{padding:3rem 1.2rem}
+.evento-card{padding:1.5rem}
+.btn-wa{font-size:1rem;padding:1.2rem 2rem;width:100%;justify-content:center}
+}
 </style>
 </head>
 <body>
@@ -59,7 +66,7 @@ html,body{background:var(--bg);font-family:'Jost',sans-serif;font-weight:300;col
     <h1 class="hero-titolo">Una voce.<br>La vostra storia.<br><em>Per sempre.</em></h1>
     <p class="hero-sub">C'è un momento in ogni evento importante in cui le parole non bastano. Le foto catturano il volto. Il video cattura il movimento. Ma nessuno cattura quello che si sente dentro.</p>
     <div class="linea-oro"></div>
-    <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;color:rgba(184,145,90,.7);letter-spacing:.05em">Io lo faccio.</p>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-style:italic;color:rgba(184,145,90,.8)">Io lo faccio.</p>
   </div>
 </section>
 <div class="sep"></div>
@@ -100,4 +107,14 @@ html,body{background:var(--bg);font-family:'Jost',sans-serif;font-weight:300;col
     <h2 class="cta-t">Parlami del tuo evento.</h2>
     <p class="cta-s">Scrivi anche solo poche righe. Anche se non sai da dove cominciare. Da lì, costruiamo qualcosa che nessuno dimenticherà.</p>
     <a href="https://wa.me/393488604669?text=Ciao%20Attilio%2C%20ho%20visto%20Il%20Dono%20Sonoro%20e%20vorrei%20parlare%20del%20mio%20evento" class="btn-wa">
-      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Scrivimi su WhatsApp
+    </a>
+    <p class="nota">Disponibilità limitata · Prezzi su richiesta · Ogni evento è diverso</p>
+  </div>
+</section>
+<footer class="footer">
+  <a href="https://www.vuotovivo.com">VUOTO VIVO</a>
+</footer>
+</body>
+</html>
