@@ -11,10 +11,10 @@ html,body{background:var(--bg);font-family:'Jost',sans-serif;font-weight:300;col
 .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:6rem 2rem 4rem;text-align:center;position:relative}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(184,145,90,.06) 0%,transparent 70%);pointer-events:none}
 .hero-inner{max-width:720px;margin:0 auto}
-.hero-tag{font-size:.85rem;letter-spacing:.4em;text-transform:uppercase;color:var(--oro);display:block;margin-bottom:2rem;opacity:.8}
+.hero-tag{font-size:.85rem;letter-spacing:.4em;text-transform:uppercase;color:var(--oro);display:block;margin-bottom:2rem}
 .hero-titolo{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,9vw,6rem);font-weight:300;line-height:1.05;margin-bottom:1.5rem;color:#f0e8d8}
 .hero-titolo em{font-style:italic;color:var(--oro)}
-.hero-sub{font-size:clamp(1.1rem,2.5vw,1.25rem);line-height:1.9;color:rgba(240,232,216,.8);max-width:500px;margin:0 auto 3rem}
+.hero-sub{font-size:clamp(1.1rem,2.5vw,1.25rem);line-height:1.9;color:rgba(240,232,216,.85);max-width:500px;margin:0 auto 3rem}
 .linea-oro{width:60px;height:1px;background:linear-gradient(to right,transparent,var(--oro-c),transparent);margin:0 auto 3rem}
 .intro{padding:5rem 2rem;text-align:center;border-top:1px solid rgba(184,145,90,.1)}
 .intro-inner{max-width:640px;margin:0 auto}
@@ -22,31 +22,31 @@ html,body{background:var(--bg);font-family:'Jost',sans-serif;font-weight:300;col
 .intro p strong{color:var(--oro-c);font-style:normal;font-weight:400}
 .eventi{padding:5rem 2rem;max-width:900px;margin:0 auto}
 .eventi-titolo{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5vw,3rem);font-weight:300;text-align:center;color:#f0e8d8;margin-bottom:.5rem}
-.eventi-sub{text-align:center;font-size:1rem;letter-spacing:.2em;text-transform:uppercase;color:var(--oro);margin-bottom:3.5rem;opacity:.9}
+.eventi-sub{text-align:center;font-size:1rem;letter-spacing:.2em;text-transform:uppercase;color:var(--oro-c);margin-bottom:3.5rem}
 .eventi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem}
 .evento-card{background:rgba(255,255,255,.04);border:1px solid rgba(184,145,90,.2);padding:2rem 1.8rem;border-radius:4px}
 .evento-emoji{font-size:2rem;display:block;margin-bottom:1rem}
 .evento-nome{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:400;color:#f0e8d8;margin-bottom:.8rem}
-.evento-desc{font-size:1.15rem;line-height:1.85;color:rgba(240,232,216,.95)}
+.evento-desc{font-size:1.15rem;line-height:1.85;color:#e8e0d0}
 .come{padding:5rem 2rem;text-align:center;border-top:1px solid rgba(184,145,90,.1)}
 .come-inner{max-width:720px;margin:0 auto}
 .come h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5vw,3rem);font-weight:300;color:#f0e8d8;margin-bottom:.5rem}
-.come-sub{font-size:1rem;letter-spacing:.2em;text-transform:uppercase;color:var(--oro);margin-bottom:3.5rem;opacity:.9}
+.come-sub{font-size:1rem;letter-spacing:.2em;text-transform:uppercase;color:var(--oro-c);margin-bottom:3.5rem}
 .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;margin-bottom:3.5rem}
 .step{text-align:center}
 .step-n{font-family:'Cormorant Garamond',serif;font-size:4rem;font-weight:300;color:rgba(184,145,90,.2);line-height:1;display:block;margin-bottom:.5rem}
 .step-t{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:#f0e8d8;margin-bottom:.6rem}
-.step-d{font-size:1.15rem;line-height:1.85;color:rgba(240,232,216,.95)}
+.step-d{font-size:1.15rem;line-height:1.85;color:#e8e0d0}
 .cta-section{padding:5rem 2rem;text-align:center;border-top:1px solid rgba(184,145,90,.1)}
 .cta-inner{max-width:560px;margin:0 auto}
 .cta-t{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:300;font-style:italic;color:#f0e8d8;line-height:1.2;margin-bottom:1rem}
-.cta-s{font-size:1.15rem;line-height:1.85;color:rgba(240,232,216,.95);margin-bottom:2.5rem}
+.cta-s{font-size:1.15rem;line-height:1.85;color:#e8e0d0;margin-bottom:2.5rem}
 .btn-wa{display:inline-flex;align-items:center;gap:.8rem;background:#25D366;color:#fff;padding:1.2rem 3rem;font-family:'Jost',sans-serif;font-size:1rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;text-decoration:none;border-radius:4px}
 .btn-wa svg{width:22px;height:22px;fill:#fff;flex-shrink:0}
-.nota{font-size:.9rem;color:rgba(184,145,90,.95);margin-top:1.5rem;letter-spacing:.1em}
+.nota{font-size:1rem;color:var(--oro-c);margin-top:1.5rem;letter-spacing:.05em;font-weight:400}
 .sep{width:1px;height:60px;background:linear-gradient(to bottom,transparent,rgba(184,145,90,.5),transparent);margin:0 auto}
-.footer{padding:2rem;text-align:center;border-top:1px solid rgba(184,145,90,.1)}
-.footer a{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--oro-c);letter-spacing:.35em;text-transform:uppercase;text-decoration:none;opacity:.6}
+.footer{padding:3rem 2rem;text-align:center;border-top:1px solid rgba(184,145,90,.2)}
+.footer a{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--oro-c);letter-spacing:.4em;text-transform:uppercase;text-decoration:none;font-weight:400}
 @media(max-width:600px){
 .hero{padding:5rem 1.5rem 3rem}
 .eventi{padding:3rem 1.2rem}
@@ -66,7 +66,7 @@ html,body{background:var(--bg);font-family:'Jost',sans-serif;font-weight:300;col
     <h1 class="hero-titolo">Una voce.<br>La vostra storia.<br><em>Per sempre.</em></h1>
     <p class="hero-sub">C'è un momento in ogni evento importante in cui le parole non bastano. Le foto catturano il volto. Il video cattura il movimento. Ma nessuno cattura quello che si sente dentro.</p>
     <div class="linea-oro"></div>
-    <p style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-style:italic;color:rgba(184,145,90,.8)">Io lo faccio.</p>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-style:italic;color:rgba(184,145,90,.9)">Io lo faccio.</p>
   </div>
 </section>
 <div class="sep"></div>
