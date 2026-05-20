@@ -1,212 +1,103 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="it">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.1">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000; min-height: 14.0px}
-    span.s1 {font-kerning: none}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--oro:#b8915a;--oro-c:#d4ac78;--oro-s:#8a6a3a;--oro-p:#e8d5b0;--bianco:#fdfaf6;--testo:#2e2a26;--testo-m:#5a5550;--linea:rgba(184,145,90,.2);--linea-f:rgba(184,145,90,.4);--bg:#0d0b08}
+html,body{background:var(--bg);font-family:'Jost',sans-serif;font-weight:300;color:var(--bianco);overflow-x:hidden}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:6rem 2rem 4rem;text-align:center;position:relative}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(184,145,90,.06) 0%,transparent 70%);pointer-events:none}
+.hero-inner{max-width:720px;margin:0 auto}
+.hero-tag{font-size:.6rem;letter-spacing:.5em;text-transform:uppercase;color:var(--oro);display:block;margin-bottom:2rem;opacity:.8}
+.hero-titolo{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,8vw,6rem);font-weight:300;line-height:1.05;margin-bottom:1.5rem;color:#f0e8d8}
+.hero-titolo em{font-style:italic;color:var(--oro)}
+.hero-sub{font-size:clamp(.9rem,2vw,1.1rem);line-height:1.9;color:rgba(240,232,216,.55);max-width:500px;margin:0 auto 3rem}
+.linea-oro{width:60px;height:1px;background:linear-gradient(to right,transparent,var(--oro-c),transparent);margin:0 auto 3rem}
+.intro{padding:5rem 2rem;text-align:center;border-top:1px solid rgba(184,145,90,.1)}
+.intro-inner{max-width:640px;margin:0 auto}
+.intro p{font-family:'Cormorant Garamond',serif;font-size:clamp(1.2rem,3vw,1.6rem);font-style:italic;font-weight:300;line-height:1.8;color:rgba(240,232,216,.8);margin-bottom:1.5rem}
+.intro p strong{color:var(--oro-c);font-style:normal;font-weight:400}
+.eventi{padding:5rem 2rem;max-width:900px;margin:0 auto}
+.eventi-titolo{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:300;text-align:center;color:#f0e8d8;margin-bottom:.5rem}
+.eventi-sub{text-align:center;font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;color:var(--oro);margin-bottom:3.5rem;opacity:.7}
+.eventi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem}
+.evento-card{background:rgba(255,255,255,.03);border:1px solid rgba(184,145,90,.15);padding:2rem 1.8rem;border-radius:4px;transition:border-color .35s,background .35s}
+.evento-card:hover{border-color:rgba(184,145,90,.4);background:rgba(184,145,90,.04)}
+.evento-emoji{font-size:1.6rem;display:block;margin-bottom:1rem}
+.evento-nome{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:400;color:#f0e8d8;margin-bottom:.5rem}
+.evento-desc{font-size:.82rem;line-height:1.75;color:rgba(240,232,216,.5)}
+.come{padding:5rem 2rem;text-align:center;border-top:1px solid rgba(184,145,90,.1)}
+.come-inner{max-width:720px;margin:0 auto}
+.come h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:300;color:#f0e8d8;margin-bottom:.5rem}
+.come-sub{font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;color:var(--oro);margin-bottom:3.5rem;opacity:.7}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;margin-bottom:3.5rem}
+.step{text-align:center}
+.step-n{font-family:'Cormorant Garamond',serif;font-size:4rem;font-weight:300;color:rgba(184,145,90,.2);line-height:1;display:block;margin-bottom:.5rem}
+.step-t{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:#f0e8d8;margin-bottom:.4rem}
+.step-d{font-size:.8rem;line-height:1.75;color:rgba(240,232,216,.45)}
+.cta-section{padding:5rem 2rem;text-align:center;border-top:1px solid rgba(184,145,90,.1)}
+.cta-inner{max-width:560px;margin:0 auto}
+.cta-t{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:300;font-style:italic;color:#f0e8d8;line-height:1.2;margin-bottom:1rem}
+.cta-s{font-size:.9rem;line-height:1.85;color:rgba(240,232,216,.45);margin-bottom:2.5rem}
+.btn-wa{display:inline-flex;align-items:center;gap:.8rem;background:#25D366;color:#fff;padding:1.1rem 2.8rem;font-family:'Jost',sans-serif;font-size:.7rem;font-weight:400;letter-spacing:.25em;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:all .3s}
+.btn-wa:hover{background:#1ebe5a;transform:translateY(-2px)}
+.btn-wa svg{width:17px;height:17px;fill:#fff;flex-shrink:0}
+.nota{font-size:.7rem;color:rgba(184,145,90,.4);margin-top:1.5rem;letter-spacing:.1em}
+.sep{width:1px;height:60px;background:linear-gradient(to bottom,transparent,rgba(184,145,90,.5),transparent);margin:0 auto}
+.footer{padding:2rem;text-align:center;border-top:1px solid rgba(184,145,90,.1)}
+.footer a{font-family:'Cormorant Garamond',serif;font-size:.95rem;color:var(--oro-c);letter-spacing:.35em;text-transform:uppercase;text-decoration:none;opacity:.6}
+@media(max-width:600px){.hero{padding:5rem 1.5rem 3rem}.eventi{padding:3rem 1.5rem}.come{padding:3rem 1.5rem}.cta-section{padding:3rem 1.5rem}.evento-card{padding:1.5rem}}
+</style>
 </head>
 <body>
-<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
-<p class="p1"><span class="s1">&lt;html lang="it"&gt;</span></p>
-<p class="p1"><span class="s1">&lt;head&gt;</span></p>
-<p class="p1"><span class="s1">&lt;meta charset="UTF-8"&gt;</span></p>
-<p class="p1"><span class="s1">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span></p>
-<p class="p1"><span class="s1">&lt;link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Jost:wght@200;300;400;500&amp;display=swap" rel="stylesheet"&gt;</span></p>
-<p class="p1"><span class="s1">&lt;style&gt;</span></p>
-<p class="p1"><span class="s1">*{margin:0;padding:0;box-sizing:border-box}</span></p>
-<p class="p1"><span class="s1">:root{</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>--oro:#b8915a;--oro-c:#d4ac78;--oro-s:#8a6a3a;--oro-p:#e8d5b0;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>--bianco:#fdfaf6;--testo:#2e2a26;--testo-m:#5a5550;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>--linea:rgba(184,145,90,.2);--linea-f:rgba(184,145,90,.4);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>--bg:#0d0b08;</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p1"><span class="s1">html,body{background:var(--bg);font-family:'Jost',sans-serif;font-weight:300;color:var(--bianco);overflow-x:hidden}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">/* HERO */</span></p>
-<p class="p1"><span class="s1">.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:6rem 2rem 4rem;text-align:center;position:relative}</span></p>
-<p class="p1"><span class="s1">.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(184,145,90,.06) 0%,transparent 70%);pointer-events:none}</span></p>
-<p class="p1"><span class="s1">.hero-inner{max-width:720px;margin:0 auto}</span></p>
-<p class="p1"><span class="s1">.hero-tag{font-size:.6rem;letter-spacing:.5em;text-transform:uppercase;color:var(--oro);display:block;margin-bottom:2rem;opacity:.8}</span></p>
-<p class="p1"><span class="s1">.hero-titolo{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,8vw,6rem);font-weight:300;line-height:1.05;margin-bottom:1.5rem;color:#f0e8d8}</span></p>
-<p class="p1"><span class="s1">.hero-titolo em{font-style:italic;color:var(--oro)}</span></p>
-<p class="p1"><span class="s1">.hero-sub{font-size:clamp(.9rem,2vw,1.1rem);line-height:1.9;color:rgba(240,232,216,.55);max-width:500px;margin:0 auto 3rem}</span></p>
-<p class="p1"><span class="s1">.linea-oro{width:60px;height:1px;background:linear-gradient(to right,transparent,var(--oro-c),transparent);margin:0 auto 3rem}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">/* INTRO */</span></p>
-<p class="p1"><span class="s1">.intro{padding:5rem 2rem;text-align:center;border-top:1px solid rgba(184,145,90,.1)}</span></p>
-<p class="p1"><span class="s1">.intro-inner{max-width:640px;margin:0 auto}</span></p>
-<p class="p1"><span class="s1">.intro p{font-family:'Cormorant Garamond',serif;font-size:clamp(1.2rem,3vw,1.6rem);font-style:italic;font-weight:300;line-height:1.8;color:rgba(240,232,216,.8);margin-bottom:1.5rem}</span></p>
-<p class="p1"><span class="s1">.intro p strong{color:var(--oro-c);font-style:normal;font-weight:400}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">/* EVENTI */</span></p>
-<p class="p1"><span class="s1">.eventi{padding:5rem 2rem;max-width:900px;margin:0 auto}</span></p>
-<p class="p1"><span class="s1">.eventi-titolo{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:300;text-align:center;color:#f0e8d8;margin-bottom:.5rem}</span></p>
-<p class="p1"><span class="s1">.eventi-sub{text-align:center;font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;color:var(--oro);margin-bottom:3.5rem;opacity:.7}</span></p>
-<p class="p1"><span class="s1">.eventi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem}</span></p>
-<p class="p1"><span class="s1">.evento-card{background:rgba(255,255,255,.03);border:1px solid rgba(184,145,90,.15);padding:2rem 1.8rem;border-radius:4px;transition:border-color .35s,background .35s}</span></p>
-<p class="p1"><span class="s1">.evento-card:hover{border-color:rgba(184,145,90,.4);background:rgba(184,145,90,.04)}</span></p>
-<p class="p1"><span class="s1">.evento-emoji{font-size:1.6rem;display:block;margin-bottom:1rem}</span></p>
-<p class="p1"><span class="s1">.evento-nome{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:400;color:#f0e8d8;margin-bottom:.5rem}</span></p>
-<p class="p1"><span class="s1">.evento-desc{font-size:.82rem;line-height:1.75;color:rgba(240,232,216,.5)}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">/* COME FUNZIONA */</span></p>
-<p class="p1"><span class="s1">.come{padding:5rem 2rem;text-align:center;border-top:1px solid rgba(184,145,90,.1)}</span></p>
-<p class="p1"><span class="s1">.come-inner{max-width:720px;margin:0 auto}</span></p>
-<p class="p1"><span class="s1">.come h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:300;color:#f0e8d8;margin-bottom:.5rem}</span></p>
-<p class="p1"><span class="s1">.come-sub{font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;color:var(--oro);margin-bottom:3.5rem;opacity:.7}</span></p>
-<p class="p1"><span class="s1">.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;margin-bottom:3.5rem}</span></p>
-<p class="p1"><span class="s1">.step{text-align:center}</span></p>
-<p class="p1"><span class="s1">.step-n{font-family:'Cormorant Garamond',serif;font-size:4rem;font-weight:300;color:rgba(184,145,90,.2);line-height:1;display:block;margin-bottom:.5rem}</span></p>
-<p class="p1"><span class="s1">.step-t{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:#f0e8d8;margin-bottom:.4rem}</span></p>
-<p class="p1"><span class="s1">.step-d{font-size:.8rem;line-height:1.75;color:rgba(240,232,216,.45)}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">/* CTA */</span></p>
-<p class="p1"><span class="s1">.cta-section{padding:5rem 2rem;text-align:center;border-top:1px solid rgba(184,145,90,.1)}</span></p>
-<p class="p1"><span class="s1">.cta-inner{max-width:560px;margin:0 auto}</span></p>
-<p class="p1"><span class="s1">.cta-t{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:300;font-style:italic;color:#f0e8d8;line-height:1.2;margin-bottom:1rem}</span></p>
-<p class="p1"><span class="s1">.cta-s{font-size:.9rem;line-height:1.85;color:rgba(240,232,216,.45);margin-bottom:2.5rem}</span></p>
-<p class="p1"><span class="s1">.btn-wa{display:inline-flex;align-items:center;gap:.8rem;background:#25D366;color:#fff;padding:1.1rem 2.8rem;font-family:'Jost',sans-serif;font-size:.7rem;font-weight:400;letter-spacing:.25em;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:all .3s}</span></p>
-<p class="p1"><span class="s1">.btn-wa:hover{background:#1ebe5a;transform:translateY(-2px)}</span></p>
-<p class="p1"><span class="s1">.btn-wa svg{width:17px;height:17px;fill:#fff;flex-shrink:0}</span></p>
-<p class="p1"><span class="s1">.nota{font-size:.7rem;color:rgba(184,145,90,.4);margin-top:1.5rem;letter-spacing:.1em}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">/* SEPARATORE */</span></p>
-<p class="p1"><span class="s1">.sep{width:1px;height:60px;background:linear-gradient(to bottom,transparent,rgba(184,145,90,.5),transparent);margin:0 auto}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">/* FOOTER */</span></p>
-<p class="p1"><span class="s1">.footer{padding:2rem;text-align:center;border-top:1px solid rgba(184,145,90,.1)}</span></p>
-<p class="p1"><span class="s1">.footer a{font-family:'Cormorant Garamond',serif;font-size:.95rem;color:var(--oro-c);letter-spacing:.35em;text-transform:uppercase;text-decoration:none;opacity:.6}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">@media(max-width:600px){</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.hero{padding:5rem 1.5rem 3rem}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.eventi{padding:3rem 1.5rem}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.come{padding:3rem 1.5rem}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.cta-section{padding:3rem 1.5rem}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>.evento-card{padding:1.5rem}</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p1"><span class="s1">&lt;/style&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
-<p class="p1"><span class="s1">&lt;body&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;!-- HERO --&gt;</span></p>
-<p class="p1"><span class="s1">&lt;section class="hero"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div class="hero-inner"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;span class="hero-tag"&gt;Vuoto Vivo · Il Dono Sonoro&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;h1 class="hero-titolo"&gt;Una voce.&lt;br&gt;La vostra storia.&lt;br&gt;&lt;em&gt;Per sempre.&lt;/em&gt;&lt;/h1&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;p class="hero-sub"&gt;C'è un momento in ogni evento importante in cui le parole non bastano. Le foto catturano il volto. Il video cattura il movimento. Ma nessuno cattura quello che si sente dentro.&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="linea-oro"&gt;&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;color:rgba(184,145,90,.7);letter-spacing:.05em"&gt;Io lo faccio.&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/section&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;div class="sep"&gt;&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;!-- INTRO --&gt;</span></p>
-<p class="p1"><span class="s1">&lt;section class="intro"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div class="intro-inner"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;p&gt;Un audio narrativo personalizzato — costruito sulla &lt;strong&gt;vostra storia vera&lt;/strong&gt; — consegnato a ogni ospite su una pergamena con QR code.&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;p&gt;Lo scansionano. Chiudono gli occhi. E sentono qualcosa che &lt;strong&gt;non dimenticheranno.&lt;/strong&gt;&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/section&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;div class="sep"&gt;&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;!-- EVENTI --&gt;</span></p>
-<p class="p1"><span class="s1">&lt;section class="eventi"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;h2 class="eventi-titolo"&gt;Per quali eventi&lt;/h2&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;p class="eventi-sub"&gt;Ogni momento che conta merita una voce&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div class="eventi-grid"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="evento-card"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;span class="evento-emoji"&gt;💍&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="evento-nome"&gt;Matrimoni&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;p class="evento-desc"&gt;La vostra storia raccontata agli ospiti. Ogni invitato porta a casa un pezzo di quel giorno. Per 50, 100, 300 persone.&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="evento-card"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;span class="evento-emoji"&gt;🕯️&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="evento-nome"&gt;Funerali e commemorazioni&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;p class="evento-desc"&gt;La vita di chi non c'è più, raccontata con dignità e verità. Il regalo più prezioso che una famiglia possa fare.&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="evento-card"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;span class="evento-emoji"&gt;✝️&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="evento-nome"&gt;Comunioni e cresime&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;p class="evento-desc"&gt;Il bambino come protagonista. I genitori in lacrime. Gli ospiti in silenzio. Un momento irripetibile reso eterno.&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="evento-card"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;span class="evento-emoji"&gt;🥂&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="evento-nome"&gt;Anniversari&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;p class="evento-desc"&gt;25, 40, 50 anni insieme. Una storia che merita di essere detta ad alta voce davanti a chi avete amato.&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="evento-card"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;span class="evento-emoji"&gt;🎓&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="evento-nome"&gt;Lauree&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;p class="evento-desc"&gt;Anni di fatica, sacrificio, crescita. Raccontati in tre minuti che valgono tutto. Un regalo che resta.&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="evento-card"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;span class="evento-emoji"&gt;🏢&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="evento-nome"&gt;Eventi aziendali&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;p class="evento-desc"&gt;Convention, pensionamenti, inaugurazioni. Un momento emotivo che unisce le persone davvero — non solo per un giorno.&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/section&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;div class="sep"&gt;&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;!-- COME FUNZIONA --&gt;</span></p>
-<p class="p1"><span class="s1">&lt;section class="come"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div class="come-inner"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;h2&gt;Come funziona&lt;/h2&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;p class="come-sub"&gt;Semplice. Potente. Irripetibile.&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="steps"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="step"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;span class="step-n"&gt;01&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="step-t"&gt;Mi racconti la storia&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;p class="step-d"&gt;Via WhatsApp. Anche poche righe, anche in modo confuso. Chi sono le persone, cosa significa quel momento. Il resto lo faccio io.&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="step"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;span class="step-n"&gt;02&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="step-t"&gt;Creo l'audio&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;p class="step-d"&gt;In 5-7 giorni costruisco qualcosa che esiste solo per voi. Non un template. Un atto artigianale. Unico.&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="step"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;span class="step-n"&gt;03&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="step-t"&gt;Gli ospiti lo ricevono&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;p class="step-d"&gt;Ogni ospite riceve una pergamena con QR code. Lo scansionano. Chiudono gli occhi. E quel momento diventa eterno.&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div style="background:rgba(184,145,90,.06);border:1px solid rgba(184,145,90,.2);padding:1.5rem 2rem;border-radius:4px;margin-bottom:2rem"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;p style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:rgba(184,145,90,.8);line-height:1.7"&gt;Ogni ospite riceve una pergamena.&lt;br&gt;Ogni pergamena porta una voce.&lt;br&gt;Ogni voce racconta una storia che esiste solo una volta.&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/section&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;div class="sep"&gt;&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;!-- CTA --&gt;</span></p>
-<p class="p1"><span class="s1">&lt;section class="cta-section"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div class="cta-inner"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;h2 class="cta-t"&gt;Parlami del tuo evento.&lt;/h2&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;p class="cta-s"&gt;Scrivi anche solo poche righe. Anche se non sai da dove cominciare. Da lì, costruiamo qualcosa che nessuno dimenticherà.&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;a href="https://wa.me/393488604669?text=Ciao%20Attilio%2C%20ho%20visto%20Il%20Dono%20Sonoro%20e%20vorrei%20parlare%20del%20mio%20evento" class="btn-wa"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;svg viewBox="0 0 24 24"&gt;&lt;path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/&gt;&lt;/svg&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>Scrivimi su WhatsApp</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/a&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;p class="nota"&gt;Disponibilità limitata · Prezzi su richiesta · Ogni evento è diverso&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/section&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;!-- FOOTER --&gt;</span></p>
-<p class="p1"><span class="s1">&lt;footer class="footer"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;a href="https://www.vuotovivo.com"&gt;VUOTO VIVO&lt;/a&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/footer&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
-</body>
-</html>
+<section class="hero">
+  <div class="hero-inner">
+    <span class="hero-tag">Vuoto Vivo · Il Dono Sonoro</span>
+    <h1 class="hero-titolo">Una voce.<br>La vostra storia.<br><em>Per sempre.</em></h1>
+    <p class="hero-sub">C'è un momento in ogni evento importante in cui le parole non bastano. Le foto catturano il volto. Il video cattura il movimento. Ma nessuno cattura quello che si sente dentro.</p>
+    <div class="linea-oro"></div>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;color:rgba(184,145,90,.7);letter-spacing:.05em">Io lo faccio.</p>
+  </div>
+</section>
+<div class="sep"></div>
+<section class="intro">
+  <div class="intro-inner">
+    <p>Un audio narrativo personalizzato — costruito sulla <strong>vostra storia vera</strong> — consegnato a ogni ospite su una pergamena con QR code.</p>
+    <p>Lo scansionano. Chiudono gli occhi. E sentono qualcosa che <strong>non dimenticheranno.</strong></p>
+  </div>
+</section>
+<div class="sep"></div>
+<section class="eventi">
+  <h2 class="eventi-titolo">Per quali eventi</h2>
+  <p class="eventi-sub">Ogni momento che conta merita una voce</p>
+  <div class="eventi-grid">
+    <div class="evento-card"><span class="evento-emoji">💍</span><div class="evento-nome">Matrimoni</div><p class="evento-desc">La vostra storia raccontata agli ospiti. Ogni invitato porta a casa un pezzo di quel giorno. Per 50, 100, 300 persone.</p></div>
+    <div class="evento-card"><span class="evento-emoji">🕯️</span><div class="evento-nome">Funerali e commemorazioni</div><p class="evento-desc">La vita di chi non c'è più, raccontata con dignità e verità. Il regalo più prezioso che una famiglia possa fare.</p></div>
+    <div class="evento-card"><span class="evento-emoji">✝️</span><div class="evento-nome">Comunioni e cresime</div><p class="evento-desc">Il bambino come protagonista. I genitori in lacrime. Gli ospiti in silenzio. Un momento irripetibile reso eterno.</p></div>
+    <div class="evento-card"><span class="evento-emoji">🥂</span><div class="evento-nome">Anniversari</div><p class="evento-desc">25, 40, 50 anni insieme. Una storia che merita di essere detta ad alta voce davanti a chi avete amato.</p></div>
+    <div class="evento-card"><span class="evento-emoji">🎓</span><div class="evento-nome">Lauree</div><p class="evento-desc">Anni di fatica, sacrificio, crescita. Raccontati in tre minuti che valgono tutto. Un regalo che resta.</p></div>
+    <div class="evento-card"><span class="evento-emoji">🏢</span><div class="evento-nome">Eventi aziendali</div><p class="evento-desc">Convention, pensionamenti, inaugurazioni. Un momento emotivo che unisce le persone davvero.</p></div>
+  </div>
+</section>
+<div class="sep"></div>
+<section class="come">
+  <div class="come-inner">
+    <h2>Come funziona</h2>
+    <p class="come-sub">Semplice. Potente. Irripetibile.</p>
+    <div class="steps">
+      <div class="step"><span class="step-n">01</span><div class="step-t">Mi racconti la storia</div><p class="step-d">Via WhatsApp. Anche poche righe. Chi sono le persone, cosa significa quel momento. Il resto lo faccio io.</p></div>
+      <div class="step"><span class="step-n">02</span><div class="step-t">Creo l'audio</div><p class="step-d">In 5-7 giorni costruisco qualcosa che esiste solo per voi. Non un template. Un atto artigianale. Unico.</p></div>
+      <div class="step"><span class="step-n">03</span><div class="step-t">Gli ospiti lo ricevono</div><p class="step-d">Ogni ospite riceve una pergamena con QR code. Lo scansionano. Chiudono gli occhi. E quel momento diventa eterno.</p></div>
+    </div>
+  </div>
+</section>
+<div class="sep"></div>
+<section class="cta-section">
+  <div class="cta-inner">
+    <h2 class="cta-t">Parlami del tuo evento.</h2>
+    <p class="cta-s">Scrivi anche solo poche righe. Anche se non sai da dove cominciare. Da lì, costruiamo qualcosa che nessuno dimenticherà.</p>
+    <a href="https://wa.me/393488604669?text=Ciao%20Attilio%2C%20ho%20visto%20Il%20Dono%20Sonoro%20e%20vorrei%20parlare%20del%20mio%20evento" class="btn-wa">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-
