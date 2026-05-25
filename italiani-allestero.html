@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La voce che torna a casa — Vuoto Vivo</title>
+<meta name="description" content="Lettere sonore in italiano per chi vive lontano dalle persone che ama. Una voce che attraversa la distanza.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --nero:#0a0806;
+  --scuro:#1a1208;
+  --oro:#b8915a;
+  --oro-c:#d4ac78;
+  --oro-s:#8a6a3a;
+  --panna:#f0e8d8;
+  --panna-s:rgba(240,232,216,.7);
+  --panna-t:rgba(240,232,216,.45);
+  --linea:rgba(184,145,90,.2);
+}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{background:var(--nero);color:var(--panna);font-family:'Jost',sans-serif;font-weight:300;overflow-x:hidden}
+
+/* HERO */
+.hero{
+  min-height:100vh;display:flex;align-items:center;justify-content:center;
+  padding:6rem 1.5rem 4rem;position:relative;overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:radial-gradient(ellipse 100% 80% at 50% 0%,rgba(138,106,58,.12) 0%,transparent 60%),
+             radial-gradient(ellipse 60% 40% at 80% 100%,rgba(184,145,90,.06) 0%,transparent 50%);
+}
+.hero-line{position:absolute;top:0;left:50%;transform:translateX(-50%);width:1px;height:40%;background:linear-gradient(to bottom,rgba(184,145,90,.4),transparent)}
+.hero-content{max-width:820px;text-align:center;position:relative;z-index:2}
+.hero-tag{display:inline-flex;align-items:center;gap:.8rem;margin-bottom:2rem;opacity:.7}
+.hero-tag span{font-size:.65rem;letter-spacing:.55em;text-transform:uppercase;color:var(--oro)}
+.hero-tag::before,.hero-tag::after{content:'';width:35px;height:1px;background:var(--oro-s)}
+.hero-h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2.8rem,8vw,6.5rem);
+  font-weight:300;line-height:1.02;
+  color:var(--panna);margin-bottom:1.2rem;
+}
+.hero-h1 em{color:var(--oro-c);font-style:italic}
+.hero-sub{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.1rem,2.5vw,1.5rem);
+  font-style:italic;font-weight:300;
+  color:var(--panna-t);
+  max-width:560px;margin:0 auto 2.5rem;
+  line-height:1.7;
+}
+.hero-sub strong{color:var(--panna-s);font-weight:300}
+.hero-cta{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:3rem}
+.btn-oro{
+  display:inline-flex;align-items:center;gap:.6rem;
+  background:var(--oro);color:#fff;text-decoration:none;
+  padding:1rem 2.2rem;font-family:'Jost',sans-serif;
+  font-size:.75rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;
+  transition:all .3s;border:none;cursor:pointer;
+}
+.btn-oro:hover{background:var(--oro-s);transform:translateY(-2px)}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:.6rem;
+  background:transparent;color:var(--panna-s);text-decoration:none;
+  padding:1rem 2.2rem;font-family:'Jost',sans-serif;
+  font-size:.75rem;font-weight:300;letter-spacing:.2em;text-transform:uppercase;
+  border:1px solid var(--linea);transition:all .3s;cursor:pointer;
+}
+.btn-ghost:hover{border-color:var(--oro);color:var(--oro)}
+.hero-nota{font-size:.72rem;color:rgba(184,145,90,.5);letter-spacing:.08em}
+.hero-nota strong{color:rgba(184,145,90,.7);font-weight:400}
+
+/* DISTANZA */
+.distanza{padding:7rem 1.5rem;text-align:center;border-top:1px solid var(--linea)}
+.distanza-in{max-width:660px;margin:0 auto}
+.section-tag{font-size:.6rem;letter-spacing:.5em;text-transform:uppercase;color:var(--oro);opacity:.6;display:block;margin-bottom:1.2rem}
+.distanza h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.8rem,4vw,3rem);
+  font-weight:300;color:var(--panna);
+  line-height:1.15;margin-bottom:1.8rem;
+}
+.distanza p{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.05rem,2.5vw,1.35rem);
+  font-style:italic;font-weight:300;
+  color:var(--panna-s);line-height:1.9;margin-bottom:1.5rem;
+}
+.distanza p strong{color:var(--panna);font-weight:300;font-style:normal}
+
+/* AUDIO PREVIEW */
+.audio-section{padding:5rem 1.5rem;background:var(--scuro)}
+.audio-in{max-width:600px;margin:0 auto;text-align:center}
+.audio-label{font-size:.65rem;letter-spacing:.4em;text-transform:uppercase;color:var(--oro);opacity:.7;margin-bottom:1.2rem;display:block}
+.audio-box{
+  background:rgba(255,255,255,.03);border:1px solid var(--linea);
+  padding:1.5rem 2rem;margin-bottom:2rem;
+}
+.audio-player{display:flex;align-items:center;gap:1rem}
+.play-btn{
+  width:52px;height:52px;border-radius:50%;
+  background:rgba(184,145,90,.12);border:1px solid rgba(184,145,90,.35);
+  color:var(--oro-c);font-size:1.1rem;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;transition:all .3s;
+}
+.play-btn:hover{background:rgba(184,145,90,.22);border-color:var(--oro)}
+.audio-info{flex:1;text-align:left}
+.audio-bar{height:2px;background:rgba(184,145,90,.12);border-radius:2px;margin-bottom:.5rem;position:relative;cursor:pointer}
+.audio-progress{height:100%;width:0%;background:linear-gradient(to right,var(--oro-s),var(--oro-c));border-radius:2px;transition:width .1s}
+.audio-meta{font-size:.62rem;color:rgba(184,145,90,.45);letter-spacing:.1em}
+.audio-note{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.95rem;color:var(--panna-t);line-height:1.7}
+
+/* PER CHI È */
+.perchi{padding:7rem 1.5rem}
+.perchi-in{max-width:1000px;margin:0 auto}
+.perchi h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.8rem,4vw,3rem);
+  font-weight:300;color:var(--panna);
+  text-align:center;margin-bottom:4rem;
+}
+.perchi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.perchi-card{
+  border:1px solid var(--linea);padding:2rem 2rem 2rem;
+  background:rgba(255,255,255,.02);transition:all .4s;
+  position:relative;overflow:hidden;
+}
+.perchi-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(to right,transparent,var(--oro-s),transparent);
+  transform:scaleX(0);transition:transform .4s;
+}
+.perchi-card:hover{border-color:rgba(184,145,90,.4);transform:translateY(-3px)}
+.perchi-card:hover::before{transform:scaleX(1)}
+.card-emoji{font-size:1.8rem;display:block;margin-bottom:.8rem;opacity:.85}
+.card-tit{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.2rem;font-weight:400;
+  color:var(--panna);margin-bottom:.6rem;
+}
+.card-txt{font-size:.88rem;line-height:1.85;color:var(--panna-t)}
+
+/* COME FUNZIONA */
+.come{padding:7rem 1.5rem;background:var(--scuro);border-top:1px solid var(--linea)}
+.come-in{max-width:800px;margin:0 auto}
+.come h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.8rem,4vw,3rem);
+  font-weight:300;color:var(--panna);
+  text-align:center;margin-bottom:4rem;
+}
+.steps{display:flex;flex-direction:column;gap:2.5rem}
+.step{display:grid;grid-template-columns:60px 1fr;gap:2rem;align-items:start}
+.step-n{
+  font-family:'Cormorant Garamond',serif;
+  font-size:3.5rem;font-weight:300;
+  color:rgba(184,145,90,.25);line-height:1;
+  text-align:right;padding-top:.2rem;
+}
+.step-content{}
+.step-tit{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.3rem;font-weight:400;
+  color:var(--panna);margin-bottom:.5rem;
+}
+.step-txt{font-size:.9rem;line-height:1.9;color:var(--panna-t)}
+.step-sep{width:40px;height:1px;background:var(--linea);margin:1.5rem 0 1.5rem 60px}
+
+/* REAZIONI */
+.reazioni{padding:7rem 1.5rem;text-align:center}
+.reazioni-in{max-width:800px;margin:0 auto}
+.reazioni h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.5rem,3vw,2.5rem);
+  font-weight:300;color:var(--panna);margin-bottom:3.5rem;
+}
+.reazioni-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;margin-bottom:3rem}
+.reaz{
+  border-left:2px solid rgba(184,145,90,.3);
+  padding:1.5rem;text-align:left;
+  background:rgba(255,255,255,.02);
+}
+.reaz-txt{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.05rem;font-style:italic;
+  color:var(--panna-s);line-height:1.7;margin-bottom:.8rem;
+}
+.reaz-firma{font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(184,145,90,.5)}
+
+/* CTA FINALE */
+.cta-finale{
+  padding:8rem 1.5rem;text-align:center;
+  background:linear-gradient(to bottom,var(--nero),var(--scuro));
+  border-top:1px solid var(--linea);
+}
+.cta-finale-in{max-width:600px;margin:0 auto}
+.cta-finale h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2rem,5vw,3.8rem);
+  font-weight:300;color:var(--panna);
+  line-height:1.1;margin-bottom:1.2rem;
+}
+.cta-finale h2 em{color:var(--oro-c);font-style:italic}
+.cta-finale p{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;font-size:clamp(1rem,2.5vw,1.3rem);
+  color:var(--panna-t);line-height:1.8;margin-bottom:2.5rem;
+}
+.btn-wa{
+  display:inline-flex;align-items:center;gap:.8rem;
+  background:#25D366;color:#fff;text-decoration:none;
+  padding:1.1rem 2.5rem;font-family:'Jost',sans-serif;
+  font-size:.78rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;
+  transition:all .3s;margin-bottom:1rem;
+}
+.btn-wa:hover{background:#1ebe5a;transform:translateY(-2px)}
+.btn-wa svg{width:18px;height:18px;fill:#fff;flex-shrink:0}
+.cta-note{font-size:.72rem;color:rgba(184,145,90,.4);letter-spacing:.08em;display:block;margin-top:1rem}
+
+/* FOOTER */
+footer{
+  padding:2rem 2rem;
+  border-top:1px solid var(--linea);
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:1rem;
+  background:var(--nero);
+}
+.f-logo{font-family:'Cormorant Garamond',serif;font-size:.9rem;color:var(--oro-c);letter-spacing:.3em;text-transform:uppercase;opacity:.6}
+.f-link{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(240,232,216,.3);text-decoration:none;transition:color .3s}
+.f-link:hover{color:var(--oro-c)}
+
+/* MOBILE */
+@media(max-width:768px){
+  .hero{padding:8rem 1.2rem 4rem}
+  .step{grid-template-columns:40px 1fr;gap:1.2rem}
+  .step-n{font-size:2.5rem}
+  .step-sep{margin-left:40px}
+  footer{flex-direction:column;text-align:center}
+  .hero-cta{flex-direction:column;align-items:center}
+  .btn-oro,.btn-ghost{width:100%;justify-content:center;max-width:320px}
+}
+
+/* ANIMAZIONI */
+.fade-in{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-line"></div>
+  <div class="hero-content">
+    <div class="hero-tag"><span>Vuoto Vivo · Attilio Figus</span></div>
+    <h1 class="hero-h1">
+      La voce<br>
+      <em>che torna a casa.</em>
+    </h1>
+    <p class="hero-sub">
+      Ci sono distanze che non si misurano in chilometri.<br>
+      <strong>Si misurano in tutte le parole che restano sospese.</strong>
+    </p>
+    <div class="hero-cta">
+      <a href="https://wa.me/393488604669?text=Ciao%20Attilio%2C%20vivo%20lontano%20e%20vorrei%20una%20lettera%20sonora" target="_blank" class="btn-oro">
+        <svg viewBox="0 0 24 24" style="width:14px;fill:#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Raccontami di chi senti la mancanza
+      </a>
+      <a href="https://www.vuotovivo.com" class="btn-ghost">Ascolta storie gratuite →</a>
+    </div>
+    <p class="hero-nota">🎧 <strong>Ascolta con le cuffie.</strong> Alcune cose arrivano meglio nel silenzio.</p>
+  </div>
+</section>
+
+<!-- DISTANZA -->
+<section class="distanza fade-in">
+  <div class="distanza-in">
+    <span class="section-tag">La distanza vera</span>
+    <h2>Hai lasciato qualcuno.<br>Non per sempre — ma le parole si accorciano.</h2>
+    <p>
+      I messaggi vocali durano due minuti. Le videochiamate si spezzano. 
+      E a volte ti accorgi che stai diventando sempre più bravo a stare lontano senza sentirti troppo.
+    </p>
+    <p>
+      <strong>Quella è la distanza che mi interessa.</strong><br>
+      Non quella geografica — quella tra quello che scrivi e quello che vorresti davvero dire.
+    </p>
+    <p>
+      Una lettera sonora non è un messaggio vocale.<br>
+      È qualcosa costruito su di te — sulla tua storia, sul tuo modo di voler bene.<br>
+      Arriva dove i messaggi normali non arrivano.
+    </p>
+  </div>
+</section>
+
+<!-- AUDIO PREVIEW -->
+<section class="audio-section fade-in">
+  <div class="audio-in">
+    <span class="audio-label">🎧 Frammento gratuito · Ascolta prima di decidere</span>
+    <div class="audio-box">
+      <div class="audio-player">
+        <button class="play-btn" id="playBtn" onclick="toggleAudio()">▶</button>
+        <div class="audio-info">
+          <div class="audio-bar" onclick="seekAudio(event,this)">
+            <div class="audio-progress" id="audioProgress"></div>
+          </div>
+          <div class="audio-meta">
+            <span id="audioTime">0:00</span> · 
+            <em style="font-family:'Cormorant Garamond',serif;font-style:italic">Lo spazio che sa la tua forma</em>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="audio-note">
+      Se puoi, usa gli auricolari. Resta qualche minuto in silenzio.<br>
+      Chiudi gli occhi. Lascia che la voce arrivi senza fretta.
+    </p>
+  </div>
+</section>
+
+<!-- PER CHI È -->
+<section class="perchi fade-in">
+  <div class="perchi-in">
+    <span class="section-tag" style="text-align:center;display:block;margin-bottom:1.2rem">Per chi è</span>
+    <h2>Chi senti lontano<br><em style="font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--oro-c)">anche quando è vicino.</em></h2>
+    <div class="perchi-grid">
+      <div class="perchi-card">
+        <span class="card-emoji">🌍</span>
+        <h3 class="card-tit">Italiani all'estero</h3>
+        <p class="card-txt">Hai lasciato l'Italia per costruire qualcosa altrove. Ma ci sono persone — e parole — che non hai ancora trovato il modo di raggiungere davvero.</p>
+      </div>
+      <div class="perchi-card">
+        <span class="card-emoji">👪</span>
+        <h3 class="card-tit">Figli lontani dai genitori</h3>
+        <p class="card-txt">Le telefonate domenicali non bastano. C'è qualcosa che vorresti dire a tua madre, a tuo padre — qualcosa che nella voce quotidiana non trova posto.</p>
+      </div>
+      <div class="perchi-card">
+        <span class="card-emoji">🏠</span>
+        <h3 class="card-tit">Genitori lontani dai figli</h3>
+        <p class="card-txt">Tuo figlio o tua figlia è partito. Guardi il telefono e pensi: come staranno davvero? Vorresti che sentissero quanto ci sei, anche da lontano.</p>
+      </div>
+      <div class="perchi-card">
+        <span class="card-emoji">💌</span>
+        <h3 class="card-tit">Un regalo che non sparisce</h3>
+        <p class="card-txt">Compleanno, anniversario, momento importante. Non vuoi mandare fiori che appassiscono. Vuoi qualcosa che resta — una voce, una presenza, qualcosa di irripetibile.</p>
+      </div>
+      <div class="perchi-card">
+        <span class="card-emoji">⏳</span>
+        <h3 class="card-tit">Prima che il tempo passi</h3>
+        <p class="card-txt">C'è qualcuno a cui vuoi dire qualcosa prima che sia troppo tardi. Non domani. Adesso — con quella qualità di presenza che solo la voce può dare.</p>
+      </div>
+      <div class="perchi-card">
+        <span class="card-emoji">🤍</span>
+        <h3 class="card-tit">Famiglie divise dalla distanza</h3>
+        <p class="card-txt">La distanza ha cambiato il modo in cui vi parlate. Una lettera sonora può ridare a quelle parole la qualità che i messaggi veloci hanno tolto.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COME FUNZIONA -->
+<section class="come fade-in">
+  <div class="come-in">
+    <span class="section-tag" style="text-align:center;display:block;margin-bottom:1.2rem">Come funziona</span>
+    <h2>Semplice.<br>Come dovrebbe essere.</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-n">01</div>
+        <div class="step-content">
+          <h3 class="step-tit">Mi racconti di chi vuoi raggiungere</h3>
+          <p class="step-txt">Scrivi su WhatsApp — anche poche righe, anche in modo confuso. Chi è quella persona. Cosa condividete. Cosa vorresti che sentisse. Non serve chiarezza — serve sincerità.</p>
+        </div>
+      </div>
+      <div class="step-sep"></div>
+      <div class="step">
+        <div class="step-n">02</div>
+        <div class="step-content">
+          <h3 class="step-tit">Ascolto e costruisco</h3>
+          <p class="step-txt">In 5–7 giorni creo una lettera sonora costruita su quella storia. Non un template — qualcosa che esiste solo per voi. Con il tuo nome dentro. Con la vostra storia dentro.</p>
+        </div>
+      </div>
+      <div class="step-sep"></div>
+      <div class="step">
+        <div class="step-n">03</div>
+        <div class="step-content">
+          <h3 class="step-tit">La ricevi e la mandi quando vuoi</h3>
+          <p class="step-txt">Ricevi il file audio in privato. Puoi inviarlo digitalmente, condividerlo via link, oppure richiedere un supporto fisico con QR code per una consegna speciale. È tua per sempre.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REAZIONI -->
+<section class="reazioni fade-in">
+  <div class="reazioni-in">
+    <span class="section-tag">Quello che succede dopo</span>
+    <h2>Non recensioni.<br>Reazioni vere.</h2>
+    <div class="reazioni-grid">
+      <div class="reaz">
+        <p class="reaz-txt">"Mi sono sentita attraversare tutta la vita in quattro minuti. Non riuscivo a smettere di piangere."</p>
+        <span class="reaz-firma">— Italiana a Londra, lettera per sua madre</span>
+      </div>
+      <div class="reaz">
+        <p class="reaz-txt">"Mi hai fatto sentire vicino a casa anche dall'altra parte del mondo."</p>
+        <span class="reaz-firma">— Ascoltatore, Buenos Aires</span>
+      </div>
+      <div class="reaz">
+        <p class="reaz-txt">"Mia figlia mi ha chiamato subito dopo. Non parlava — respirava. Poi ha detto: papà."</p>
+        <span class="reaz-firma">— Padre, lettera per figlia a Berlino</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINALE -->
+<section class="cta-finale fade-in">
+  <div class="cta-finale-in">
+    <h2>C'è qualcuno<br><em>che vorresti raggiungere davvero?</em></h2>
+    <p>
+      Non domani. Non quando trovi le parole giuste.<br>
+      Adesso — con quella qualità di presenza che solo la voce può dare.
+    </p>
+    <a href="https://wa.me/393488604669?text=Ciao%20Attilio%2C%20vivo%20lontano%20e%20vorrei%20una%20lettera%20sonora%20per%20qualcuno%20a%20cui%20tengo" target="_blank" class="btn-wa">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Raccontami la tua storia
+    </a>
+    <span class="cta-note">oppure scrivi a a.figus@icloud.com · vuotovivo.com</span>
+  </div>
+</section>
+
+<footer>
+  <span class="f-logo">Vuoto Vivo</span>
+  <span style="font-size:.62rem;color:rgba(240,232,216,.2);letter-spacing:.08em">Attilio Figus · Master Counselor</span>
+  <a href="https://www.vuotovivo.com" class="f-link">vuotovivo.com</a>
+</footer>
+
+<script>
+// Audio player
+var audio = null;
+var playing = false;
+
+function toggleAudio() {
+  var btn = document.getElementById('playBtn');
+  var prog = document.getElementById('audioProgress');
+  var time = document.getElementById('audioTime');
+  
+  if (!audio) {
+    // URL audio da inserire - usa uno degli audio già caricati su Wix
+    audio = new Audio('https://video.wixstatic.com/video/7f8300_651b6fc6c29f4ccaa8928cd95523aa63/1080p/mp4/file.mp4');
+    audio.addEventListener('timeupdate', function() {
+      if (audio.duration) {
+        prog.style.width = (audio.currentTime/audio.duration*100)+'%';
+        var s = Math.floor(audio.currentTime);
+        time.textContent = Math.floor(s/60)+':'+(s%60<10?'0':'')+s%60;
+      }
+    });
+    audio.addEventListener('ended', function() {
+      btn.textContent = '▶'; playing = false;
+    });
+  }
+  if (playing) {
+    audio.pause(); btn.textContent = '▶'; playing = false;
+  } else {
+    audio.play().catch(function(){}); btn.textContent = '⏸'; playing = true;
+  }
+}
+
+function seekAudio(e, bar) {
+  if (!audio || !audio.duration) return;
+  var rect = bar.getBoundingClientRect();
+  audio.currentTime = ((e.clientX - rect.left) / rect.width) * audio.duration;
+}
+
+// Fade in scroll
+var obs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+  });
+}, {threshold: 0.1});
+document.querySelectorAll('.fade-in').forEach(function(el) { obs.observe(el); });
+</script>
+</body>
+</html>

@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Memoria e Presenza — Vuoto Vivo</title>
+<meta name="description" content="Per chi non è più qui. Per le parole non dette. Per chi vuole che certe presenze restino. Una voce che abita quello che non riesci a dire.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --nero:#070509;
+  --scuro:#110d14;
+  --medio:#1a1520;
+  --viola:rgba(140,100,180,.15);
+  --oro:#b8915a;
+  --oro-c:#d4ac78;
+  --oro-s:#8a6a3a;
+  --panna:#f0e8d8;
+  --panna-s:rgba(240,232,216,.7);
+  --panna-t:rgba(240,232,216,.45);
+  --linea:rgba(184,145,90,.18);
+  --linea-v:rgba(160,120,200,.15);
+}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{background:var(--nero);color:var(--panna);font-family:'Jost',sans-serif;font-weight:300;overflow-x:hidden}
+
+/* HERO */
+.hero{
+  min-height:100vh;display:flex;align-items:center;justify-content:center;
+  padding:6rem 1.5rem 4rem;position:relative;overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 80% 60% at 30% 20%,rgba(100,70,150,.08) 0%,transparent 55%),
+    radial-gradient(ellipse 60% 40% at 70% 80%,rgba(138,106,58,.06) 0%,transparent 50%);
+}
+.hero-particelle{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.hero-particelle::before,.hero-particelle::after{
+  content:'';position:absolute;
+  width:1px;background:linear-gradient(to bottom,transparent,rgba(184,145,90,.3),transparent);
+}
+.hero-particelle::before{height:60%;top:20%;left:30%;animation:salita 8s ease-in-out infinite}
+.hero-particelle::after{height:40%;top:30%;left:70%;animation:salita 6s ease-in-out infinite 3s}
+@keyframes salita{0%,100%{opacity:0;transform:translateY(20px)}50%{opacity:1;transform:translateY(-20px)}}
+
+.hero-content{max-width:800px;text-align:center;position:relative;z-index:2}
+.hero-tag{display:inline-flex;align-items:center;gap:.8rem;margin-bottom:2.5rem;opacity:.6}
+.hero-tag span{font-size:.62rem;letter-spacing:.55em;text-transform:uppercase;color:var(--oro)}
+.hero-tag::before,.hero-tag::after{content:'';width:30px;height:1px;background:var(--oro-s)}
+.hero-h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2.5rem,7vw,6rem);
+  font-weight:300;line-height:1.05;
+  color:var(--panna);margin-bottom:1.5rem;
+}
+.hero-h1 em{color:var(--oro-c);font-style:italic}
+.hero-sub{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.05rem,2.5vw,1.4rem);
+  font-style:italic;font-weight:300;
+  color:var(--panna-t);
+  max-width:580px;margin:0 auto 3rem;line-height:1.8;
+}
+.hero-sub strong{color:var(--panna-s);font-weight:300;font-style:normal}
+.hero-cta{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:2.5rem}
+
+.btn-oro{
+  display:inline-flex;align-items:center;gap:.6rem;
+  background:var(--oro);color:#fff;text-decoration:none;
+  padding:1rem 2.2rem;font-family:'Jost',sans-serif;
+  font-size:.75rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;
+  transition:all .3s;border:none;cursor:pointer;
+}
+.btn-oro:hover{background:var(--oro-s);transform:translateY(-2px)}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:.6rem;
+  background:transparent;color:var(--panna-s);text-decoration:none;
+  padding:1rem 2.2rem;font-family:'Jost',sans-serif;
+  font-size:.75rem;font-weight:300;letter-spacing:.2em;text-transform:uppercase;
+  border:1px solid var(--linea);transition:all .3s;cursor:pointer;
+}
+.btn-ghost:hover{border-color:var(--oro);color:var(--oro)}
+.hero-nota{font-size:.72rem;color:rgba(184,145,90,.4);letter-spacing:.08em}
+
+/* PRESENZA */
+.presenza{padding:7rem 1.5rem;border-top:1px solid var(--linea)}
+.presenza-in{max-width:700px;margin:0 auto;text-align:center}
+.section-tag{font-size:.6rem;letter-spacing:.5em;text-transform:uppercase;color:var(--oro);opacity:.55;display:block;margin-bottom:1.2rem}
+.presenza h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.7rem,4vw,2.8rem);
+  font-weight:300;color:var(--panna);line-height:1.2;margin-bottom:2rem;
+}
+.presenza p{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1rem,2.5vw,1.3rem);
+  font-style:italic;color:var(--panna-s);
+  line-height:1.9;margin-bottom:1.5rem;
+}
+.presenza p strong{color:var(--panna);font-weight:300;font-style:normal}
+.sep-oro{width:60px;height:1px;background:rgba(184,145,90,.3);margin:2.5rem auto}
+
+/* AUDIO */
+.audio-section{padding:5rem 1.5rem;background:var(--scuro);border-top:1px solid var(--linea)}
+.audio-in{max-width:560px;margin:0 auto;text-align:center}
+.audio-label{font-size:.63rem;letter-spacing:.4em;text-transform:uppercase;color:var(--oro);opacity:.65;margin-bottom:1.2rem;display:block}
+.audio-box{background:rgba(255,255,255,.025);border:1px solid var(--linea);padding:1.5rem 2rem;margin-bottom:2rem}
+.audio-player{display:flex;align-items:center;gap:1rem}
+.play-btn{
+  width:52px;height:52px;border-radius:50%;
+  background:rgba(184,145,90,.1);border:1px solid rgba(184,145,90,.3);
+  color:var(--oro-c);font-size:1rem;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .3s;
+}
+.play-btn:hover{background:rgba(184,145,90,.2)}
+.audio-bar{height:2px;background:rgba(184,145,90,.1);border-radius:2px;margin-bottom:.5rem;cursor:pointer}
+.audio-progress{height:100%;width:0%;background:linear-gradient(to right,var(--oro-s),var(--oro-c));border-radius:2px}
+.audio-meta{font-size:.6rem;color:rgba(184,145,90,.4);letter-spacing:.1em;text-align:left}
+.audio-note{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.95rem;color:var(--panna-t);line-height:1.7}
+
+/* QUANDO -->  lista situazioni */
+.quando{padding:7rem 1.5rem}
+.quando-in{max-width:1000px;margin:0 auto}
+.quando h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.7rem,4vw,2.8rem);
+  font-weight:300;color:var(--panna);text-align:center;margin-bottom:4rem;
+}
+.quando-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.quando-card{
+  border:1px solid var(--linea);padding:2rem;
+  background:rgba(255,255,255,.02);
+  transition:all .4s;position:relative;overflow:hidden;
+}
+.quando-card::after{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(140,100,180,.04),transparent);
+  opacity:0;transition:opacity .4s;
+}
+.quando-card:hover{border-color:rgba(184,145,90,.35);transform:translateY(-3px)}
+.quando-card:hover::after{opacity:1}
+.wcard-top{display:flex;align-items:center;gap:.8rem;margin-bottom:1rem}
+.wcard-icon{font-size:1.5rem;opacity:.8}
+.wcard-tit{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.15rem;font-weight:400;color:var(--panna);
+}
+.wcard-txt{font-size:.88rem;line-height:1.85;color:var(--panna-t)}
+
+/* COSA NON È */
+.cosa-non{padding:6rem 1.5rem;background:var(--scuro);border-top:1px solid var(--linea);text-align:center}
+.cosa-non-in{max-width:660px;margin:0 auto}
+.cosa-non h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.5rem,3.5vw,2.5rem);
+  font-weight:300;color:var(--panna);margin-bottom:2.5rem;
+}
+.lista-non{list-style:none;margin-bottom:2.5rem}
+.lista-non li{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1rem,2.5vw,1.2rem);
+  font-style:italic;color:var(--panna-t);
+  padding:.7rem 0;border-bottom:1px solid rgba(184,145,90,.08);
+  display:flex;align-items:center;gap:1rem;justify-content:center;
+}
+.lista-non li::before{content:'—';color:rgba(184,145,90,.3);flex-shrink:0}
+.cosa-si{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.1rem,2.5vw,1.4rem);
+  font-style:italic;color:var(--panna);
+  border-left:2px solid rgba(184,145,90,.35);
+  padding:1.2rem 1.5rem;text-align:left;
+  margin-top:2rem;line-height:1.7;
+}
+
+/* COME FUNZIONA */
+.come{padding:7rem 1.5rem;border-top:1px solid var(--linea)}
+.come-in{max-width:760px;margin:0 auto}
+.come h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.7rem,4vw,2.8rem);
+  font-weight:300;color:var(--panna);text-align:center;margin-bottom:4rem;
+}
+.steps{display:flex;flex-direction:column;gap:2rem}
+.step{display:grid;grid-template-columns:60px 1fr;gap:2rem;align-items:start}
+.step-n{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;color:rgba(184,145,90,.2);line-height:1;text-align:right;padding-top:.3rem}
+.step-tit{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:400;color:var(--panna);margin-bottom:.5rem}
+.step-txt{font-size:.9rem;line-height:1.9;color:var(--panna-t)}
+.step-div{width:40px;height:1px;background:var(--linea);margin:1.2rem 0 1.2rem 60px}
+
+/* REAZIONI */
+.reazioni{padding:7rem 1.5rem;text-align:center;background:var(--scuro);border-top:1px solid var(--linea)}
+.reazioni-in{max-width:800px;margin:0 auto}
+.reazioni h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.5rem,3vw,2.4rem);font-weight:300;color:var(--panna);margin-bottom:3.5rem}
+.reazioni-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
+.reaz{border-left:2px solid rgba(184,145,90,.25);padding:1.5rem;text-align:left;background:rgba(255,255,255,.02)}
+.reaz-txt{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-style:italic;color:var(--panna-s);line-height:1.7;margin-bottom:.8rem}
+.reaz-firma{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(184,145,90,.45)}
+
+/* CTA */
+.cta-finale{padding:9rem 1.5rem;text-align:center;border-top:1px solid var(--linea)}
+.cta-finale-in{max-width:580px;margin:0 auto}
+.cta-finale h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5vw,4rem);font-weight:300;color:var(--panna);line-height:1.08;margin-bottom:1.2rem}
+.cta-finale h2 em{color:var(--oro-c);font-style:italic}
+.cta-finale p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1rem,2.5vw,1.3rem);color:var(--panna-t);line-height:1.8;margin-bottom:2.5rem}
+.btn-wa{display:inline-flex;align-items:center;gap:.8rem;background:#25D366;color:#fff;text-decoration:none;padding:1.1rem 2.5rem;font-family:'Jost',sans-serif;font-size:.78rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;transition:all .3s;margin-bottom:.8rem}
+.btn-wa:hover{background:#1ebe5a;transform:translateY(-2px)}
+.btn-wa svg{width:17px;height:17px;fill:#fff;flex-shrink:0}
+.cta-note{font-size:.7rem;color:rgba(184,145,90,.35);letter-spacing:.08em;display:block;margin-top:.8rem}
+
+footer{padding:2rem;border-top:1px solid var(--linea);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;background:var(--nero)}
+.f-logo{font-family:'Cormorant Garamond',serif;font-size:.9rem;color:var(--oro-c);letter-spacing:.3em;text-transform:uppercase;opacity:.55}
+.f-link{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(240,232,216,.25);text-decoration:none;transition:color .3s}
+.f-link:hover{color:var(--oro-c)}
+
+@media(max-width:768px){
+  .hero{padding:8rem 1.2rem 4rem}
+  .hero-cta{flex-direction:column;align-items:center}
+  .btn-oro,.btn-ghost,.btn-wa{width:100%;justify-content:center;max-width:320px}
+  .step{grid-template-columns:40px 1fr;gap:1rem}
+  .step-n{font-size:2rem}
+  .step-div{margin-left:40px}
+  footer{flex-direction:column;text-align:center}
+}
+
+.fade-in{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-particelle"></div>
+  <div class="hero-content">
+    <div class="hero-tag"><span>Vuoto Vivo · Memoria e Presenza</span></div>
+    <h1 class="hero-h1">
+      Ci sono persone<br>che continuano<br>
+      <em>ad abitare dentro di noi.</em>
+    </h1>
+    <p class="hero-sub">
+      Non come ricordo.<br>
+      <strong>Come presenza che aspetta di essere nominata.</strong>
+    </p>
+    <div class="hero-cta">
+      <a href="https://wa.me/393488604669?text=Ciao%20Attilio%2C%20ho%20qualcuno%20a%20cui%20vorrei%20arrivare%20con%20la%20voce" target="_blank" class="btn-oro">
+        Raccontami chi porti dentro
+      </a>
+      <a href="https://www.vuotovivo.com" class="btn-ghost">Ascolta prima →</a>
+    </div>
+    <p class="hero-nota">🎧 <strong style="font-weight:400;color:rgba(184,145,90,.6)">Ascolta con le cuffie.</strong> Alcune cose arrivano meglio nel silenzio.</p>
+  </div>
+</section>
+
+<!-- PRESENZA -->
+<section class="presenza fade-in">
+  <div class="presenza-in">
+    <span class="section-tag">Quello che nessuno dice</span>
+    <h2>Il lutto non finisce.<br>Si trasforma — se gli dai una forma.</h2>
+    <p>C'è qualcuno che non c'è più. O che sta per andare. O che è ancora qui ma senti che il tempo si stringe — e ci sono parole che non hai ancora trovato il modo di dire.</p>
+    <p>Non si tratta di ricordare. Si tratta di <strong>completare qualcosa che è rimasto a metà.</strong></p>
+    <p>Una lettera sonora non cura il dolore. Non promette che passerà. Entra in quel posto preciso in cui le cose aspettavano di essere sentite davvero — e ci sta, con te.</p>
+    <div class="sep-oro"></div>
+    <p style="font-size:clamp(1.1rem,2.5vw,1.35rem);color:var(--panna)">
+      <em>La voce non spiega. Non analizza. Non consola con parole generiche.<br>
+      Abita — con te — quello che non riesci a dire.</em>
+    </p>
+  </div>
+</section>
+
+<!-- AUDIO -->
+<section class="audio-section fade-in">
+  <div class="audio-in">
+    <span class="audio-label">🎧 Frammento gratuito</span>
+    <div class="audio-box">
+      <div class="audio-player">
+        <button class="play-btn" id="playBtn" onclick="toggleAudio()">▶</button>
+        <div style="flex:1">
+          <div class="audio-bar" onclick="seekAudio(event,this)">
+            <div class="audio-progress" id="audioProgress"></div>
+          </div>
+          <div class="audio-meta">
+            <span id="audioTime">0:00</span> · 
+            <em style="font-family:'Cormorant Garamond',serif;font-style:italic">Lo spazio che sa la tua forma</em>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="audio-note">
+      Questo audio è stato costruito su una storia vera.<br>
+      La tua storia merita la stessa qualità di presenza.
+    </p>
+  </div>
+</section>
+
+<!-- QUANDO -->
+<section class="quando fade-in">
+  <div class="quando-in">
+    <span class="section-tag" style="text-align:center;display:block;margin-bottom:1.2rem">Per chi è</span>
+    <h2>Quando le parole normali<br><em style="font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--oro-c)">non bastano più.</em></h2>
+    <div class="quando-grid">
+      <div class="quando-card">
+        <div class="wcard-top">
+          <span class="wcard-icon">🕯️</span>
+          <h3 class="wcard-tit">Per chi sta per andare</h3>
+        </div>
+        <p class="wcard-txt">C'è qualcuno che sta attraversando la fine. Vuoi che sappia — con la qualità che le parole quotidiane non riescono a dare — quanto ha contato. Quanto conta ancora.</p>
+      </div>
+      <div class="quando-card">
+        <div class="wcard-top">
+          <span class="wcard-icon">🤍</span>
+          <h3 class="wcard-tit">Per chi è andato</h3>
+        </div>
+        <p class="wcard-txt">Ci sono cose che non hai fatto in tempo a dire. Una lettera sonora non è per lui, per lei — è per te. Per dare forma a quello che è rimasto sospeso.</p>
+      </div>
+      <div class="quando-card">
+        <div class="wcard-top">
+          <span class="wcard-icon">💬</span>
+          <h3 class="wcard-tit">Le parole non dette</h3>
+        </div>
+        <p class="wcard-txt">Con un genitore, un figlio, un amico. Ci sono cose che sai di voler dire ma il momento giusto non arriva mai. La voce trova il momento — anche quando tu non riesci.</p>
+      </div>
+      <div class="quando-card">
+        <div class="wcard-top">
+          <span class="wcard-icon">🌿</span>
+          <h3 class="wcard-tit">Un rito di saluto</h3>
+        </div>
+        <p class="wcard-txt">Non un funerale. Non un'orazione. Qualcosa di più intimo — una presenza sonora da ascoltare in silenzio, da soli o insieme, nel momento del commiato.</p>
+      </div>
+      <div class="quando-card">
+        <div class="wcard-top">
+          <span class="wcard-icon">📖</span>
+          <h3 class="wcard-tit">Una storia che non deve perdersi</h3>
+        </div>
+        <p class="wcard-txt">Tuo nonno, tua nonna — quella generazione che porta storie che stanno per sparire. Una lettera sonora può tenere viva quella voce, quella presenza, quel modo di stare al mondo.</p>
+      </div>
+      <div class="quando-card">
+        <div class="wcard-top">
+          <span class="wcard-icon">🔁</span>
+          <h3 class="wcard-tit">Per chi rimane</h3>
+        </div>
+        <p class="wcard-txt">Il lutto è anche dei vivi. Un audio costruito su chi è andato può diventare un punto di ritorno — qualcosa a cui tornare quando la mancanza è più forte.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COSA NON È -->
+<section class="cosa-non fade-in">
+  <div class="cosa-non-in">
+    <span class="section-tag">Chiarezza</span>
+    <h2>Quello che non è.</h2>
+    <ul class="lista-non">
+      <li>Non è terapia del lutto</li>
+      <li>Non è spiritualità o esoterismo</li>
+      <li>Non è un servizio di commemorazione formale</li>
+      <li>Non promette che il dolore passerà</li>
+      <li>Non sostituisce nessun percorso professionale</li>
+    </ul>
+    <div class="cosa-si">
+      "È qualcosa che non ha ancora un nome preciso. Una presenza sonora autoriale che entra nei posti in cui le parole normali non arrivano — e ci sta, senza fretta di uscirne."
+    </div>
+  </div>
+</section>
+
+<!-- COME FUNZIONA -->
+<section class="come fade-in">
+  <div class="come-in">
+    <span class="section-tag" style="text-align:center;display:block;margin-bottom:1.2rem">Il processo</span>
+    <h2>Come nasce<br>una lettera sonora.</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-n">01</div>
+        <div>
+          <h3 class="step-tit">Mi racconti</h3>
+          <p class="step-txt">Chi è questa persona. Cosa condividevate. Cosa vorresti che sapesse o che restasse. Non serve ordine — serve verità. Anche poche righe sono sufficienti per cominciare.</p>
+        </div>
+      </div>
+      <div class="step-div"></div>
+      <div class="step">
+        <div class="step-n">02</div>
+        <div>
+          <h3 class="step-tit">Ascolto e costruisco</h3>
+          <p class="step-txt">Prendo tempo con quello che mi hai raccontato. In 5–7 giorni nasce qualcosa che è solo tuo — non un template, non una formula. Una presenza sonora costruita su quella storia precisa.</p>
+        </div>
+      </div>
+      <div class="step-div"></div>
+      <div class="step">
+        <div class="step-n">03</div>
+        <div>
+          <h3 class="step-tit">Lo ricevi in privato</h3>
+          <p class="step-txt">Un file audio consegnato in modo riservato. Da ascoltare da solo, o insieme a chi ami, nel momento che senti giusto. Puoi anche richiedere un supporto fisico con QR code per tenerlo con te.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REAZIONI -->
+<section class="reazioni fade-in">
+  <div class="reazioni-in">
+    <span class="section-tag">Quello che succede dopo</span>
+    <h2>Non parole mie.<br>Reazioni vere.</h2>
+    <div class="reazioni-grid">
+      <div class="reaz">
+        <p class="reaz-txt">"Hai trovato parole che io non ero mai riuscito a dire. In trent'anni."</p>
+        <span class="reaz-firma">— Ascoltatore, lettera per suo padre</span>
+      </div>
+      <div class="reaz">
+        <p class="reaz-txt">"L'abbiamo ascoltata insieme, in silenzio. Non c'era altro da dire dopo."</p>
+        <span class="reaz-firma">— Famiglia, rito di commiato</span>
+      </div>
+      <div class="reaz">
+        <p class="reaz-txt">"Mi hai visto più di persone che conosco da anni. Non so come hai fatto."</p>
+        <span class="reaz-firma">— Ascoltatore</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINALE -->
+<section class="cta-finale fade-in">
+  <div class="cta-finale-in">
+    <h2>C'è qualcosa<br><em>che aspetta di essere detto.</em></h2>
+    <p>
+      Non c'è un momento giusto per queste cose.<br>
+      C'è solo adesso — e la voce che può arrivarci.
+    </p>
+    <a href="https://wa.me/393488604669?text=Ciao%20Attilio%2C%20ho%20qualcuno%20a%20cui%20vorrei%20arrivare%20e%20ci%20sono%20parole%20che%20non%20ho%20ancora%20detto" target="_blank" class="btn-wa">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Raccontami la storia
+    </a>
+    <span class="cta-note">oppure scrivi a a.figus@icloud.com · vuotovivo.com</span>
+  </div>
+</section>
+
+<footer>
+  <span class="f-logo">Vuoto Vivo</span>
+  <span style="font-size:.6rem;color:rgba(240,232,216,.18);letter-spacing:.08em">Attilio Figus · Master Counselor</span>
+  <a href="https://www.vuotovivo.com" class="f-link">vuotovivo.com</a>
+</footer>
+
+<script>
+var audio = null, playing = false;
+function toggleAudio() {
+  var btn = document.getElementById('playBtn');
+  var prog = document.getElementById('audioProgress');
+  var time = document.getElementById('audioTime');
+  if (!audio) {
+    audio = new Audio('https://video.wixstatic.com/video/7f8300_651b6fc6c29f4ccaa8928cd95523aa63/1080p/mp4/file.mp4');
+    audio.addEventListener('timeupdate', function() {
+      if (audio.duration) {
+        prog.style.width = (audio.currentTime/audio.duration*100)+'%';
+        var s = Math.floor(audio.currentTime);
+        time.textContent = Math.floor(s/60)+':'+(s%60<10?'0':'')+s%60;
+      }
+    });
+    audio.addEventListener('ended', function() { btn.textContent='▶'; playing=false; });
+  }
+  if (playing) { audio.pause(); btn.textContent='▶'; playing=false; }
+  else { audio.play().catch(function(){}); btn.textContent='⏸'; playing=true; }
+}
+function seekAudio(e, bar) {
+  if (!audio||!audio.duration) return;
+  var rect = bar.getBoundingClientRect();
+  audio.currentTime = ((e.clientX-rect.left)/rect.width)*audio.duration;
+}
+var obs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) { if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);} });
+},{threshold:0.08});
+document.querySelectorAll('.fade-in').forEach(function(el){obs.observe(el);});
+</script>
+</body>
+</html>
